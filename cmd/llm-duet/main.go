@@ -300,12 +300,12 @@ func writeReviewerInput(path, promptPath, planPath string) error {
 		return err
 	}
 
-builder := &strings.Builder{}
-builder.WriteString("[REVIEW_PROMPT]\n")
-builder.WriteString(string(promptContent))
-builder.WriteString("\n\n--- PLAN_MD ---\n")
-builder.WriteString(string(planContent))
-builder.WriteString("\n")
+	builder := &strings.Builder{}
+	builder.WriteString("[REVIEW_PROMPT]\n")
+	builder.WriteString(string(promptContent))
+	builder.WriteString("\n\n--- PLAN_MD ---\n")
+	builder.WriteString(string(planContent))
+	builder.WriteString("\n")
 
 	return os.WriteFile(path, []byte(builder.String()), 0o644)
 }
