@@ -8,6 +8,16 @@
 go build ./cmd/llm-duet
 ```
 
+## GitHub Actions でのビルドとリリース
+
+`v*` 形式のタグを push すると、GitHub Actions が以下の環境でバイナリをビルドし、チェックサム付きでリリースに添付します。
+
+- Linux (amd64 / arm64)
+- macOS (amd64 / arm64)
+- Windows (amd64)
+
+手動でリリースを作成したい場合は、リポジトリの Actions 画面から `Release` ワークフローを `workflow_dispatch` で実行してください。
+
 ## 使い方
 
 ### 初期化
